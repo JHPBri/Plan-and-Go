@@ -1,68 +1,66 @@
-.photoBG{
-        top: 0px;
-    left: 0px;
-    width: 1920px;
-    height: 719px;
-    /* UI Properties */
-    
-    opacity: 1;
-}
+.photoBG {
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 719px;
+ 
+  
+  background-image: url("https://images.unsplash.com/photo-1510327073072-f898a7dbe0c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  opacity: 1;
+} 
 
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 50px;
-    background: #FFFFFF
+#nav-tag {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+
 }
 
 .list {
-    list-style-type: none;
-    background: #FFFFFF;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  list-style-type: none;
+  
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 .items {
-    margin-right: 20px;
-    font-size: 20px;
-    text-transform: uppercase;
-    color: #f1f1f1;
-    cursor: pointer;
+  margin-right: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #f1f1f1;
+  cursor: pointer;
 }
 
 .btn {
-    display: none;
-    position: absolute;
-    right: 10px;
-    top: 7px;
-    padding: 5px;
-    color: #000;
-    font-size: 18px;
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  padding: 5px;
+  color: #000;
+  font-size: 18px;
 }
 
-
-@media screen and (max-width: 500px){
-
-    .list {
-        flex-direction: column;
-        height: auto;
-    }
-    .items:nth-child(1){
-        border-top: 1px solid rgba(255, 255, 255, 0.555);
-        margin-top: 50px;
-    }
-    .items {
-        width: 100%;
-        border-top: 1px solid rgba(255, 255, 255, 0.555);
-        text-align: center;
-        margin-right: 0px;
-        padding: 20px 0;
-    }
-    .btn {
-        display: block;
-    }
-
+@media screen and (max-width: 500px) {
+  .list {
+    flex-direction: column;
+    height: auto;
+  }
+  .items:nth-child(1) {
+    border-top: 1px solid rgba(255, 255, 255, 0.555);
+    margin-top: 50px;
+  }
+  .items {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.555);
+    text-align: center;
+    margin-right: 0px;
+    padding: 20px 0;
+  }
+  .btn {
+    display: block;
+  }
 }

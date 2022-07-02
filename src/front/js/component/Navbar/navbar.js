@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-
 import "../../../styles/Navbar.css";
 
 
@@ -28,15 +27,17 @@ export const Navbar = () => {
 
 	return(
 		<div className="photoBG">
-			<nav>
+			<nav id="nav-tag">
 			<ul className="list">
 				<li className="items">Logo</li>
 				<li className="items">Log In</li>
 				<li className="items">Sign In</li>
 			</ul>
 			<button onClick={toggleNav} className="btn">BTN</button>
-		</nav>
+			</nav>
 		</div>
+			
+		
 		
 	)
 };
