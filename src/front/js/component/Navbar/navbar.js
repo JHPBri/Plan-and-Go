@@ -1,27 +1,42 @@
-import React from "react";
-import { MenuItems } from "./MenuItems";
+import React, {useState, useEffect} from "react";
+
 import "../../../styles/Navbar.css";
+
+
 export const Navbar = () => {
+	const [toggleMenu, setToggleMenu] = useState(false)
+	const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+
 	
-	state = { clicked: false }
+		const toggleNav = () => {
+		setToggleMenu(!toggleMenu)
+		}
+
+		useEffect(() => {
 	
-	return (
-		<nav className="NavbarItems navbar-light bg-light">
-			<h1 className="navbar-logo">React <i className="fab fa-react"></i></h1>
-			<div className="menu-icon" onClick ={this.handleClick}>
-				<i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'} ></i>
-			</div>
-			<ul>
-				{MenuItems.map((item, index) =>{
-					return (
-						<li key={index}>
-							<a className={item.cName} href= {item.url}>
-							{item.title}
-							</a>
-						</li>
-					)
-				})}
+		const changeWidth = () => {
+			setScreenWidth(window.innerWidth);
+		}
+	
+		window.addEventListener('resize', changeWidth)
+	
+		return () => {
+			window.removeEventListener('resize', changeWidth)
+		}
+	
+		}, [])
+
+	return(
+		<div className="photoBG">
+			<nav>
+			<ul className="list">
+				<li className="items">Logo</li>
+				<li className="items">Log In</li>
+				<li className="items">Sign In</li>
 			</ul>
+			<button onClick={toggleNav} className="btn">BTN</button>
 		</nav>
-	);
+		</div>
+		
+	)
 };

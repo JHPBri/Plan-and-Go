@@ -1,20 +1,68 @@
-.NavbarItems {
-    background: linear-gradient(90deg, rgb(110, 94, 254) 0%, rgba(73,63, 252, 1));
-    height: 80px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
+.photoBG{
+        top: 0px;
+    left: 0px;
+    width: 1920px;
+    height: 719px;
+    /* UI Properties */
+    
+    opacity: 1;
 }
 
-.navbar-logo {
-    color: #fff;
-    justify-self: start;
-    margin-left: 20px;
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background: #FFFFFF
+}
+
+.list {
+    list-style-type: none;
+    background: #FFFFFF;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.items {
+    margin-right: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #f1f1f1;
     cursor: pointer;
 }
 
-.fa-react {
-    margin-left: 0.5rem;
-    font-size: 1.6rem;
+.btn {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    padding: 5px;
+    color: #000;
+    font-size: 18px;
+}
+
+
+@media screen and (max-width: 500px){
+
+    .list {
+        flex-direction: column;
+        height: auto;
+    }
+    .items:nth-child(1){
+        border-top: 1px solid rgba(255, 255, 255, 0.555);
+        margin-top: 50px;
+    }
+    .items {
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.555);
+        text-align: center;
+        margin-right: 0px;
+        padding: 20px 0;
+    }
+    .btn {
+        display: block;
+    }
+
 }
