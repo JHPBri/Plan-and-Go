@@ -1,21 +1,14 @@
 .photoBG {
+  background-repeat: no-repeat;
   top: 0px;
   left: 0px;
-  width: 1920px;
-  height: 719px;
- 
-  
-  background-image: url("https://images.unsplash.com/photo-1510327073072-f898a7dbe0c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  width: 100%;
+  height: 201px;
+  background: url("https://images.unsplash.com/photo-1510327073072-f898a7dbe0c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80") padding-box;
+  background-size:cover;
   opacity: 1;
 } 
 
-#nav-tag {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 50px;
-
-}
 
 .list {
   list-style-type: none;
