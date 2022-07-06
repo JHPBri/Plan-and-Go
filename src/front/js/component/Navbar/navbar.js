@@ -27,14 +27,17 @@ export const Navbar = () => {
 
 	return(
 		<div className="photoBG">
-			<nav id="nav-tag">
-			<ul className="list">
-				<li className="items">Logo</li>
-				<li className="items">Log In</li>
-				<li className="items">Sign In</li>
-			</ul>
-			<button onClick={toggleNav} className="btn">BTN</button>
-			</nav>
+			<nav class="navbar">
+				<div class="navbar-container container">
+					
+					<ul class="menu-items">
+						<li><a href="#">Log In</a></li>
+						<li id="sign-up"><a href="#">Sign Up</a></li>
+						
+					</ul>
+					<h1 class="logo">Logo</h1>
+				</div>
+   			</nav>
 		</div>
 			
 		
