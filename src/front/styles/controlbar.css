@@ -1,0 +1,13 @@
+.controlContainer{
+    box-shadow: 0px 8px 6px #0000003B;
+
+    border-radius: 32px;
+    background-color: orange;
+    display: flex;
+}
+
+#dropdown-basic{
+    background-color:#FFFFFF;
+    color: #444;
+
+}

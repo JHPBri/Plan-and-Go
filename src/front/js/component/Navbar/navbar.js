@@ -28,15 +28,15 @@ export const Navbar = () => {
 	return(
 		<div className="photoBG">
 			
-			<nav class="navbar">
-				<div class="navbar-container container">
+			<nav className="navbar">
+				<div className="navbar-container container">
 					
-					<ul class="menu-items">
+					<ul className="menu-items">
 						<li><a href="#">Log In</a></li>
 						<li id="sign-up"><a href="#">Sign Up</a></li>
 						
 					</ul>
-					<h1 class="logo">Logo</h1>
+					<h1 className="logo">Logo</h1>
 				</div>
    			</nav>
 			<h1 className="header">Start the memories here.</h1>
