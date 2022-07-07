@@ -52,7 +52,7 @@ export const Controlbar = () => {
 
      <Dropdown className="Filter-Dropdown">
      <Dropdown.Toggle  id="dropdown-basic">
-     <i class="fa-regular fa-filter"></i>
+     <i className="fa-regular fa-filter"></i>
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
