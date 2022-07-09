@@ -23,7 +23,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <div className="photoBG">
+    <div>
       <nav className="navbar">
         <div className="navbar-container container">
           <ul className="menu-items">
@@ -39,8 +39,7 @@ export const Navbar = () => {
           <h1 className="logo">Logo</h1>
         </div>
       </nav>
-      <h1 className="header">Start the memories here.</h1>
-      <h2 className="header2">Find local events happening near you</h2>
+      
     </div>
   );
 };

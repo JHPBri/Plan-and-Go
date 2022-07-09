@@ -1,13 +1,21 @@
 .controlContainer{
-    box-shadow: 0px 8px 6px #0000003B;
-
-    border-radius: 32px;
-    background-color: orange;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    width:450px;
+    margin:0 auto;
+    height: 10px;
+
+    
+    
+
 }
 
-#dropdown-basic{
+#dropdown-autoclose-inside{
     background-color:#FFFFFF;
     color: #444;
-
+    
+    
+    
 }
