@@ -1,0 +1,24 @@
+.header1{
+    width: 1252px;
+    height: 185px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: normal normal bold 46px/100px Bahnschrift;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+h2{
+font: normal normal bold 24px/34px Bahnschrift;
+letter-spacing: 1.2px;
+color: #50899B;
+opacity: 1;
+}
+
+.fa-palette{
+    color: #DB893F;
+    padding-bottom: 20px;
+}

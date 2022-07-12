@@ -1,17 +1,4 @@
-.photoBG {
-  background: transparent
-    url("https://images.unsplash.com/photo-1510327073072-f898a7dbe0c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
-    0% 0% padding-box;
-  top: 0px;
-  left: 0px;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: bottom center;
-  height: 400px;
-  text-align: center;
-  object-fit: scale-down;
-  opacity: 1;
-}
+
 
 .header {
   padding-top: 120px;
