@@ -1,5 +1,4 @@
 .header1{
-    width: 1252px;
     height: 185px;
     opacity: 1;
     display: flex;
@@ -18,7 +17,58 @@ color: #50899B;
 opacity: 1;
 }
 
+.category{
+    display:flex;
+    justify-content: space-evenly;
+    text-align: center;
+    
+}
+
+.category-btn{
+    border-color: #FFFFFF;
+    border-radius: 50%;
+    border-width: 0px;
+    background-color: #FFFFFF;
+}
+
+.pallete{
+    justify-content: center;
+
+}
 .fa-palette{
     color: #DB893F;
-    padding-bottom: 20px;
+}
+
+.sports{
+    justify-content: center;
+
+}
+
+.fa-basketball{
+    color: #DB893F;
+}
+
+.music{
+    justify-content: center;
+
+}
+
+.fa-music{
+    color: #DB893F;
+}
+
+.utensils{
+    justify-content: center;
+}
+
+.fa-utensils{
+    color: #DB893F;
+}
+
+.shopping{
+    justify-content: center;
+}
+
+.fa-bag-shopping{
+    color: #DB893F;
 }
