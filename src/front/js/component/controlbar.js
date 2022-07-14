@@ -63,24 +63,10 @@ export const Controlbar = () => {
         </Dropdown.Menu>
       </Dropdown>
 
-      <Dropdown className="search-Dropdown" autoClose="outside">
-        <Dropdown.Toggle id="dropdown-autoclose-inside" className="search-toggle">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu className="search-menu">
-          <Dropdown.Item href="#/action-1">
-            <InputGroup className="mb-3">
-              <Button id="button-addon1">Submit</Button>
-              <Form.Control
-                className="searchbar"
-                aria-label="Example text with button addon"
-                aria-describedby="basic-addon1"
-              />
-            </InputGroup>
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+      <div class="searchBox">
+        <input type="search" placeholder="Search"/>
+        <i class="fa fa-search"></i>
+      </div>
   </div>
   );
 };
