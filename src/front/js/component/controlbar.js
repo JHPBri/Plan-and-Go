@@ -1,10 +1,10 @@
 import React from "react";
 import "../../styles/controlbar.css";
+import {RdatePicker} from "./DatePicker.js";
 import Dropdown from "react-bootstrap/Dropdown";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
-import InputGroup from "react-bootstrap/InputGroup";
+
 export const Controlbar = () => {
   return (
     <div className="controlContainer">
@@ -28,20 +28,14 @@ export const Controlbar = () => {
 
         <Dropdown.Menu className="date-menu">
           <Dropdown.Item href="#/action-1">
-            <InputGroup className="mb-3">
-              <Button id="button-addon1">Submit</Button>
-              <Form.Control
-                aria-label="Example text with button addon"
-                aria-describedby="basic-addon1"
-              />
-            </InputGroup>
+            <RdatePicker/>
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
 
       <Dropdown className="Filter-Dropdown" autoClose="outside">
         <Dropdown.Toggle id="dropdown-autoclose-inside">
-          <i class="fa-solid fa-filter"></i>
+          <i className="fa-solid fa-filter"></i>
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
@@ -63,9 +57,9 @@ export const Controlbar = () => {
         </Dropdown.Menu>
       </Dropdown>
 
-      <div class="searchBox">
+      <div className="searchBox">
         <input type="search" placeholder="Search"/>
-        <i class="fa fa-search"></i>
+        <i className="fa fa-search"></i>
       </div>
   </div>
   );

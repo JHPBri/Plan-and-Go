@@ -17,7 +17,7 @@ export const FeaturedCategories = () =>{
 
                 <button className='category-btn'>
                     <div className='sports'>
-                        <i class="fa-solid fa-basketball fa-2xl"></i>
+                        <i className="fa-solid fa-basketball fa-2xl"></i>
                         <h2>Sports</h2>
                     </div>
                 </button>
@@ -32,14 +32,14 @@ export const FeaturedCategories = () =>{
                 
                 <button className='category-btn'>
                 <div className='utensils'>
-                    <i class="fa-solid fa-utensils fa-2xl"></i>
+                    <i className="fa-solid fa-utensils fa-2xl"></i>
                     <h2>Food + Drinks</h2>
                 </div>
                 </button>
 
                 <button className='category-btn'>
                 <div className="shopping">
-                    <i class="fa-solid fa-bag-shopping fa-2xl"></i>
+                    <i className="fa-solid fa-bag-shopping fa-2xl"></i>
                     <h2>Shopping</h2>
                 </div>
                 </button>
