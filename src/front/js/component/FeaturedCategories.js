@@ -1,5 +1,6 @@
 import React from 'react';
 import "../../styles/FeaturedCategories.css";
+import {datePicker} from "./DatePicker.js";
 
 export const FeaturedCategories = () =>{
 
@@ -10,7 +11,7 @@ export const FeaturedCategories = () =>{
             <div className='category'>
                 <button className='category-btn'>
                 <div className='pallete'>
-                    <i class="fa-solid fa-palette fa-2xl"></i>
+                    <i className="fa-solid fa-palette fa-2xl"></i>
                     <h2>Art</h2>
                 </div>
                 </button>
@@ -24,7 +25,7 @@ export const FeaturedCategories = () =>{
                 
                 <button className='category-btn'>
                 <div className='music'>
-                    <i class="fa-solid fa-music fa-2xl"></i>
+                    <i className="fa-solid fa-music fa-2xl"></i>
                     <h2>Music</h2>
                 </div>
                 </button>

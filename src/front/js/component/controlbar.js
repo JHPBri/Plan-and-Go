@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/controlbar.css";
-import {RdatePicker} from "./DatePicker.js";
+import {ReactdatePicker} from "./DatePicker.js";
 import Dropdown from "react-bootstrap/Dropdown";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -28,7 +28,7 @@ export const Controlbar = () => {
 
         <Dropdown.Menu className="date-menu">
           <Dropdown.Item href="#/action-1">
-            <RdatePicker/>
+            <ReactdatePicker/>
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>

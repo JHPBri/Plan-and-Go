@@ -32,9 +32,9 @@ export const Navbar = () => {
                 Log In
               </a>
             </li>
-            <li id="sign-up" onClick="">
+            {/* <li id="sign-up" onClick="">
               <a href="#">Sign Up</a>
-            </li>
+            </li> */}
           </ul>
           <h1 className="logo">Logo</h1>
         </div>
