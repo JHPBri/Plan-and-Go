@@ -7,7 +7,7 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Login } from "./pages/Login/Login";
-import {Search} from './pages/Search';
+import {Search} from './pages/Search/Search';
 
 import { Navbar } from "./component/Navbar/navbar";
 import { Footer } from "./component/footer";
