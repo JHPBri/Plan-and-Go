@@ -6,4 +6,13 @@
     width: 210px;
     height: 210px;
     border-radius: 4px;
+    margin-right: 1rem;
+}
+
+.business-info{
+    min-width: 400px;
+}
+.contact-info p{
+    font-size: .8rem;
+    margin-bottom: 0;
 }
