@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.search-summary p {
+    font-size: 20px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-summary {
+    padding: 2rem 0;
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
