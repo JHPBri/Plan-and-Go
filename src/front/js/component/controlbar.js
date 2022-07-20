@@ -58,6 +58,7 @@ export const Controlbar = () => {
       </Dropdown>
 
       <div className="searchBox">
+        
         <input type="search" placeholder="Search"/>
         <i className="fa fa-search"></i>
       </div>

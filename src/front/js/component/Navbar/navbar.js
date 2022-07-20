@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../../styles/Navbar.css";
 import { Login } from "../../pages/Login/Login";
+import {Home} from "../../pages/home"
 
 export const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -36,7 +37,7 @@ export const Navbar = () => {
               <a href="#">Sign Up</a>
             </li> */}
           </ul>
-          <h1 className="logo">Logo</h1>
+          <a href="home" onClick={Home}><h1 className="logo">Logo</h1></a>
         </div>
       </nav>
       
