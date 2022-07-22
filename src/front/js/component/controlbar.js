@@ -1,23 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/controlbar.css";
 import {ReactdatePicker} from "./DatePicker.js";
 import Dropdown from "react-bootstrap/Dropdown";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 
-export const Controlbar = () => {
+export const Controlbar = (props) => {
+
+  const [term, setTerm] = useState(props.term || '');
+  const [location, setLocation] = useState(props.location || '');
+
+  function submit(e) {
+    console.log(term, location);
+    e.preventDefault();
+  }
+
   return (
-    <div className="controlContainer">
+    <Form className="controlContainer" onSubmit={submit}>
+      
       <Dropdown className="Location-Dropdown" autoClose="outside">
         <Dropdown.Toggle id="dropdown-autoclose-inside">
           <i className="fa-solid fa-location-dot"></i> Location
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">United States</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">London</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Seoul</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Sydney</Dropdown.Item>
+          <Dropdown.Item href="#/action-1" onChange={(e) =>setLocation(e.target.value)} onClick={submit}>United States</Dropdown.Item>
+          <Dropdown.Item href="#/action-2" onChange={(e) =>setLocation(e.target.value)} onClick={submit}>London</Dropdown.Item>
+          <Dropdown.Item href="#/action-3" onChange={(e) =>setLocation(e.target.value)} onClick={submit}>Seoul</Dropdown.Item>
+          <Dropdown.Item href="#/action-3" onChange={(e) =>setLocation(e.target.value)} onClick={submit}>Sydney</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
 
@@ -59,9 +69,9 @@ export const Controlbar = () => {
 
       <div className="searchBox">
         
-        <input type="search" placeholder="Search"/>
-        <i className="fa fa-search"></i>
+        <input type="search" placeholder="Search" onChange={(e) =>setTerm(e.target.value)}/>
+        <i className="fa fa-search" onClick={submit}></i>
       </div>
-  </div>
+  </Form>
   );
 };
