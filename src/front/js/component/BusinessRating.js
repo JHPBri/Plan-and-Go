@@ -13,6 +13,7 @@ export const BusinessRating = () => {
             readonly
             initialRating={4}
             />
+            <p  className="p-reviews">345 Reviews</p>
         </div>
     )
 }

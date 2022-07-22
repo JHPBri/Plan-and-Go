@@ -1,5 +1,7 @@
 .search-result{
     display: flex;
+    max-width: 1010px;
+    width: 100%;
 }
 
 .business-image {
