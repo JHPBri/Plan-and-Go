@@ -18,19 +18,11 @@ export const Controlbar = (props) => {
   return (
     <Form className="controlContainer" onSubmit={submit}>
       
-      <Dropdown className="Location-Dropdown" autoClose="outside">
-        <Dropdown.Toggle id="dropdown-autoclose-inside">
-          <i className="fa-solid fa-location-dot"></i> Location
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1" onChange={(e) =>setLocation(e.target.value)} onClick={submit}>United States</Dropdown.Item>
-          <Dropdown.Item href="#/action-2" onChange={(e) =>setLocation(e.target.value)} onClick={submit}>London</Dropdown.Item>
-          <Dropdown.Item href="#/action-3" onChange={(e) =>setLocation(e.target.value)} onClick={submit}>Seoul</Dropdown.Item>
-          <Dropdown.Item href="#/action-3" onChange={(e) =>setLocation(e.target.value)} onClick={submit}>Sydney</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
+      <div className="searchBox">
+        
+        <input type="search" placeholder="Search" onChange={(e) =>setLocation(e.target.value)}/>
+        <i className="fa-solid fa-location-dot" onClick={submit}></i>
+      </div>
       <Dropdown className="Date-Dropdown" autoClose="outside">
         <Dropdown.Toggle id="dropdown-autoclose-inside">
           <i className="fa-solid fa-calendar-days"></i> Date

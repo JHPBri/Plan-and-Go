@@ -4,10 +4,10 @@
     justify-content: space-evenly;
     align-items: center;
     opacity: 1;
-    width:500px;
+    width:530px;
+    max-width: 100%;
     margin:0 auto;
-    height: 50px;
-    
+    height: 55px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 8px 6px #0000003B;
     border-radius: 25px;
@@ -32,6 +32,9 @@
     
 }
 
+
+
+
 /*SEARCH BAR HOVER CSS*/
 
 .searchBox {
@@ -41,6 +44,8 @@
     justify-content: center;
     align-items: center;
 }
+
+
 
 .searchBox input{
     background-color: #444;
