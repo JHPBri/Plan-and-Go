@@ -1,6 +1,5 @@
 import React from 'react';
 import "../../styles/FeaturedCategories.css";
-import {datePicker} from "./DatePicker.js";
 
 export const FeaturedCategories = () =>{
 
