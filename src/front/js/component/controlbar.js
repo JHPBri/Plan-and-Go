@@ -42,7 +42,7 @@ export const Controlbar = () => {
 
       <Dropdown className="Filter-Dropdown" autoClose="outside">
         <Dropdown.Toggle id="dropdown-autoclose-inside">
-          <i class="fa-solid fa-filter"></i>
+          <i className="fa-solid fa-filter"></i>
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
@@ -72,6 +72,6 @@ export const Controlbar = () => {
         />
         <Button id="button-addon2">Search</Button>
       </InputGroup>
-  </div>
+    </div>
   );
 };

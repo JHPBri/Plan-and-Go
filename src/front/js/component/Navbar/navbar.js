@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../../styles/Navbar.css";
 import { Login } from "../../pages/Login/Login";
+import { SignUp } from "../../pages/Login/SignUp";
 
 export const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -29,17 +30,16 @@ export const Navbar = () => {
           <ul className="menu-items">
             <li>
               <a href="login" onClick={Login}>
-                Log In
+                Sign In
               </a>
             </li>
-            <li id="sign-up" onClick="">
-              <a href="#">Sign Up</a>
+            <li id="sign-up" onClick={SignUp}>
+              <a href="signup">Sign Up</a>
             </li>
           </ul>
           <h1 className="logo">Logo</h1>
         </div>
       </nav>
-      
     </div>
   );
 };

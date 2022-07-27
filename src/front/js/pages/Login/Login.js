@@ -1,23 +1,40 @@
-import React from "react";
-import { User } from "../Login/User";
+import React, { useState } from "react";
+import {
+  // onAuthStateChanged,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../../store/Firebase";
 import GoogleButton from "react-google-button";
 import { signInWithGoogle } from "../../store/Firebase";
 import "../Login/login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export const Login = (props) => {
-  const [
-    email,
-    setEmail,
-    password,
-    setPassword,
-    handleLogin,
-    handleSignup,
-    hasAccount,
-    setHasAccount,
-    emailError,
-    passwordError,
-  ] = props;
+export const Login = () => {
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+
+  const [user, setUser] = useState({});
+
+  // onAuthStateChanged(auth, (currentUser) => {
+  //   setUser(currentUser);
+  // });
+
+  const register = async () => {};
+
+  const login = async () => {
+    try {
+      const user = await signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword
+      );
+      console.log(user);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const logout = async () => {};
 
   return (
     <div>
@@ -31,12 +48,10 @@ export const Login = (props) => {
                 type="text"
                 autoFocus
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setLoginEmail(e.target.value)}
                 className="form-control mt-1"
                 placeholder="Email Address"
               />
-              <p className="errorMsg">{emailError}</p>
             </div>
             <div className="form-group mt-3">
               <label>Password</label>
@@ -44,54 +59,22 @@ export const Login = (props) => {
                 type="password"
                 autoFocus
                 required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setLoginPassword(e.target.value)}
                 className="form-control mt-1"
                 placeholder="Password"
               />
-              <p className="errorMsg">{passwordError}</p>
             </div>
-            <div className="d-grid gap-2 mt-3">
-              {hasAccount ? (
-                <>
-                  <button
-                    onClick={handleLogin}
-                    type="submit"
-                    className="btn btn-primary"
-                  >
-                    Submit
-                  </button>
-                  <p>
-                    Don't have an account ?{" "}
-                    <span onClick={() => setHasAccount(!hasAccount)}>
-                      Sign up
-                    </span>
-                  </p>
-                </>
-              ) : (
-                <>
-                  <button
-                    onClick={handleSignup}
-                    type="submit"
-                    className="btn btn-primary"
-                  >
-                    Submit
-                  </button>
-                  <p>
-                    Have an account ?{" "}
-                    <span onClick={() => setHasAccount(!hasAccount)}>
-                      Log In
-                    </span>
-                  </p>
-                </>
-              )}
+            <div>
+              <button onClick={login} type="submit" className="btn btn-primary">
+                Submit
+              </button>
             </div>
             <p className="forgot-password text-right mt-2">
               <a href="#">Forgot your password?</a>
             </p>
             <hr />
-            <div class="container">
-              <div class="vertical-center">
+            <div className="container">
+              <div className="vertical-center">
                 <GoogleButton onClick={signInWithGoogle} />
               </div>
             </div>
