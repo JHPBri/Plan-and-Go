@@ -4,9 +4,23 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
-
+import os
+import requests
 api = Blueprint('api', __name__)
 
+
+
+API_KEY = os.environ['API_KEY']
+HEADERS = {'Authorization': 'Bearer %s' % API_KEY}
+
+
+@api.route('/details/<name>', methods=['GET'])
+def handle_FullDetails(name):
+    r =requests.get('https://api.yelp.com/v3/businesses/'+ str(name), headers=HEADERS)
+    run = r.json()
+    return jsonify(run), 200
+
+    
 
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
@@ -16,3 +30,4 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+
