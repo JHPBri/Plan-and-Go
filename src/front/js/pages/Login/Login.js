@@ -19,8 +19,6 @@ export const Login = () => {
   //   setUser(currentUser);
   // });
 
-  const register = async () => {};
-
   const login = async () => {
     try {
       const user = await signInWithEmailAndPassword(

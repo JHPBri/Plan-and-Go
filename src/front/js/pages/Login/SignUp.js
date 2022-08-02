@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import { Login } from "./Login";
-import {
-  // onAuthStateChanged,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../store/Firebase";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Login/signup.css";
 
 export const SignUp = () => {
-  const [registerFirstName, setRegisterFirstName] = useState("");
-  const [registerLastName, setRegisterLastName] = useState("");
+  // const [registerFirstName, setRegisterFirstName] = useState("");
+  // const [registerLastName, setRegisterLastName] = useState("");
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
 
@@ -20,8 +17,8 @@ export const SignUp = () => {
     try {
       const user = await createUserWithEmailAndPassword(
         auth,
-        registerFirstName,
-        registerLastName,
+        // registerFirstName,
+        // registerLastName,
         registerEmail,
         registerPassword
       );
@@ -38,7 +35,7 @@ export const SignUp = () => {
           <div className="signup-content">
             <h3 className="signup-form-title">Register</h3>
             <div className=" form-group mt-3">
-              <label>First name</label>
+              {/* <label>First name</label>
               <input
                 type="text"
                 className="form-control"
@@ -57,7 +54,7 @@ export const SignUp = () => {
                 onChange={(e) => {
                   setRegisterLastName(e.target.value);
                 }}
-              />
+              /> */}
             </div>
             <div className=" form-group mt-3">
               <label>Email</label>
