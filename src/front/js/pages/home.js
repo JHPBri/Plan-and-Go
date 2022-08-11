@@ -5,8 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Controlbar } from "../component/controlbar";
 import {FeaturedCategories } from "../component/FeaturedCategories";
 import { Discover } from "../component/discover";
+
 export const Home = () => {
 	const { store, actions } = useContext(Context);
+
+	
 
 	return (
 		<div>
