@@ -2,14 +2,21 @@ import React, {useState}  from "react";
 import "../../styles/home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Controlbar } from "../component/controlbar";
-
+import YelpAPI from "../../../api/yelpAPI/config";
 import {FeaturedCategories } from "../component/FeaturedCategories";
 
 export const Home = () => {
 
-	const [term, setTerm] = useState(""); 
-	const[searchApi, amountResults, errorMessage] = useResults();
-	console.log(amountResults);
+	const [state, setState] = useState({
+		results: []
+	});
+
+	const onSearch = async (text) => {
+		const results = await YelpAPI.get("/", {
+			
+		})
+	}
+
 	return (
 		<div>
 			<div className="photoBG container-fluid">

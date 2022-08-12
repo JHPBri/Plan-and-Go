@@ -10,13 +10,14 @@ export const Controlbar = (props) => {
   const [term, setTerm] = useState(props.term || '');
   const [location, setLocation] = useState(props.location || '');
 
-  function submit(e) {
-    if(typeof props.search === 'function') {
-      props.search(term, location);
-    }
+  const handleInput = (e) => {
+    const text = e.target.value
+    setTerm(text)
+    setLocation(text)
+  }
 
-    console.log(term, location);
-    e.preventDefault();
+  const handleEnterKeyPressed = (e) => {
+    if(e.key === 'Enter'){onSearch(term, location)}
   }
 
   return (
@@ -24,7 +25,7 @@ export const Controlbar = (props) => {
         <Form className="controlContainer" onSubmit={submit}>
         <div className="searchBox">
               
-              <input type="search" placeholder="Search" onChange={(e) =>setLocation(e.target.value)}/>
+              <input type="search" placeholder="Search" onChange={handleInput} onKeyPress={handleEnterKeyPressed} value={location} />
               <i className="fa-solid fa-location-dot" onClick={submit}></i>
             </div>
             <Dropdown className="Date-Dropdown" autoClose="outside">
@@ -64,7 +65,7 @@ export const Controlbar = (props) => {
             </Dropdown>
 
             <div className="searchBox">
-              <input type="search" placeholder="Search" onChange={(e) =>setTerm(e.target.value)}/>
+              <input type="search" placeholder="Search" onChange={handleInput} onKeyPress={handleEnterKeyPressed} value={term}/>
               <i className="fa-solid fa-location-dot" onClick={submit}></i>
             </div>
         </Form>
