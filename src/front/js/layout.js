@@ -20,6 +20,7 @@ export const Layout = () => {
 
   return (
     <div>
+
       <AuthContextProvider>
         <BrowserRouter basename={basename}>
           <ScrollToTop>
@@ -37,6 +38,7 @@ export const Layout = () => {
           </ScrollToTop>
         </BrowserRouter>
       </AuthContextProvider>
+
     </div>
   );
 };

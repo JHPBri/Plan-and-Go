@@ -1,41 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/controlbar.css";
+import {ReactdatePicker} from "./DatePicker.js";
 import Dropdown from "react-bootstrap/Dropdown";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
 import Col from "react-bootstrap/Col";
-import InputGroup from "react-bootstrap/InputGroup";
-export const Controlbar = () => {
+
+export const Controlbar = (props) => {
+
+  const [term, setTerm] = useState(props.term || '');
+  const [location, setLocation] = useState(props.location || '');
+
+  function submit(e) {
+    if(typeof props.search === 'function') {
+      props.search(term, location);
+    }
+
+    console.log(term, location);
+    e.preventDefault();
+  }
+
   return (
-    <div className="controlContainer">
-      <Dropdown className="Location-Dropdown" autoClose="outside">
-        <Dropdown.Toggle id="dropdown-autoclose-inside">
-          <i className="fa-solid fa-location-dot"></i> Location
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">United States</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">London</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Seoul</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Sydney</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
+    <Form className="controlContainer" onSubmit={submit}>
+      
+      <div className="searchBox">
+        
+        <input type="search" placeholder="Search" onChange={(e) =>setLocation(e.target.value)}/>
+        <i className="fa-solid fa-location-dot" onClick={submit}></i>
+      </div>
       <Dropdown className="Date-Dropdown" autoClose="outside">
         <Dropdown.Toggle id="dropdown-autoclose-inside">
           <i className="fa-solid fa-calendar-days"></i> Date
         </Dropdown.Toggle>
 
-        <Dropdown.Menu>
+        <Dropdown.Menu className="date-menu">
           <Dropdown.Item href="#/action-1">
-            <InputGroup className="mb-3">
-              <Button id="button-addon1">Submit</Button>
-              <Form.Control
-                aria-label="Example text with button addon"
-                aria-describedby="basic-addon1"
-              />
-            </InputGroup>
+            <ReactdatePicker/>
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
@@ -73,5 +72,6 @@ export const Controlbar = () => {
         <Button id="button-addon2">Search</Button>
       </InputGroup>
     </div>
+
   );
 };

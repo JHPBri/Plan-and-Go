@@ -1,0 +1,13 @@
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating > * {
+    margin-right: 4px;
+}
+
+.p-reviews {
+    margin-bottom: 0px;
+    padding-left: 10px;
+}

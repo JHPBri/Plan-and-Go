@@ -80,10 +80,13 @@
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-bootstrap": "^2.4.0",
+		"react-datepicker": "^4.8.0",
 		"react-dom": "^16.8.4",
 		"react-firebase-hooks": "^5.0.3",
 		"react-google-button": "^0.7.2",
 		"react-polyfills": "0.0.1",
-		"react-router-dom": "^6.3.0"
+		"react-rating": "^2.0.5",
+		"react-router-dom": "^6.3.0",
+		"use-react-router": "^1.0.7"
 	}
 }
