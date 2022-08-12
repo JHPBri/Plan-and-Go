@@ -61,14 +61,14 @@
 }
 
 .navbar a {
-  color: #444;
+  color: #cfcfcf;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease-in-out;
 }
 
 .navbar a:hover {
-  color: #117964;
+  color: #444;
 }
 
 @media (max-width: 768px) {

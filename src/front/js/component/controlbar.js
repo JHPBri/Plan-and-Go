@@ -20,58 +20,55 @@ export const Controlbar = (props) => {
   }
 
   return (
-    <Form className="controlContainer" onSubmit={submit}>
-      
-      <div className="searchBox">
-        
-        <input type="search" placeholder="Search" onChange={(e) =>setLocation(e.target.value)}/>
-        <i className="fa-solid fa-location-dot" onClick={submit}></i>
-      </div>
-      <Dropdown className="Date-Dropdown" autoClose="outside">
-        <Dropdown.Toggle id="dropdown-autoclose-inside">
-          <i className="fa-solid fa-calendar-days"></i> Date
-        </Dropdown.Toggle>
+      <div>
+        <Form className="controlContainer" onSubmit={submit}>
+        <div className="searchBox">
+              
+              <input type="search" placeholder="Search" onChange={(e) =>setLocation(e.target.value)}/>
+              <i className="fa-solid fa-location-dot" onClick={submit}></i>
+            </div>
+            <Dropdown className="Date-Dropdown" autoClose="outside">
+              <Dropdown.Toggle id="dropdown-autoclose-inside">
+                <i className="fa-solid fa-calendar-days"></i> Date
+              </Dropdown.Toggle>
 
-        <Dropdown.Menu className="date-menu">
-          <Dropdown.Item href="#/action-1">
-            <ReactdatePicker/>
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+              <Dropdown.Menu className="date-menu">
+                <Dropdown.Item href="#/action-1">
+                  <ReactdatePicker/>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
-      <Dropdown className="Filter-Dropdown" autoClose="outside">
-        <Dropdown.Toggle id="dropdown-autoclose-inside">
-          <i className="fa-solid fa-filter"></i>
-        </Dropdown.Toggle>
+            <Dropdown className="Filter-Dropdown" autoClose="outside">
+              <Dropdown.Toggle id="dropdown-autoclose-inside">
+                <i className="fa-solid fa-filter"></i>
+              </Dropdown.Toggle>
 
-        <Dropdown.Menu>
-          <Dropdown.Header>Age restriction</Dropdown.Header>
-          <Dropdown.Item href="#/action-1">
-            <Form>
-              <Col>
-                <Form.Check
-                  type="switch"
-                  id="custom-switch"
-                  label="kid-friendly"
-                />
-                <Form.Check type="switch" id="custom-switch" label="age: 13+" />
-                <Form.Check type="switch" id="custom-switch" label="age: 18+" />
-                <Form.Check type="switch" id="custom-switch" label="age: 21+" />
-              </Col>
-            </Form>
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+              <Dropdown.Menu>
+                <Dropdown.Header>Age restriction</Dropdown.Header>
+                <Dropdown.Item href="#/action-1">
+                  <Form>
+                    <Col>
+                      <Form.Check
+                        type="switch"
+                        id="custom-switch"
+                        label="kid-friendly"
+                      />
+                      <Form.Check type="switch" id="custom-switch" label="age: 13+" />
+                      <Form.Check type="switch" id="custom-switch" label="age: 18+" />
+                      <Form.Check type="switch" id="custom-switch" label="age: 21+" />
+                    </Col>
+                  </Form>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
-      <InputGroup className="col-6">
-        <FormControl
-          placeholder="Search"
-          aria-label="Search"
-          aria-describedby="basic-addon2"
-        />
-        <Button id="button-addon2">Search</Button>
-      </InputGroup>
+            <div className="searchBox">
+              <input type="search" placeholder="Search" onChange={(e) =>setTerm(e.target.value)}/>
+              <i className="fa-solid fa-location-dot" onClick={submit}></i>
+            </div>
+        </Form>
+            
     </div>
-
   );
 };

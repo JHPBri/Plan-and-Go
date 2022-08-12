@@ -4,7 +4,7 @@ import "../../../styles/SearchResults.css";
 
 
 export const SearchResults = () => {
-
+    
     return(
         <div className="search-results">
             <SearchResult/>
