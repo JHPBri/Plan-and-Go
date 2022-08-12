@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Login/signup.css";
 import { useAuth } from "../../store/appContext";
+import { useMounted } from "../../store/useMounted";
 
 export const SignUp = () => {
   const navigate = useNavigate();
@@ -12,6 +13,8 @@ export const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { register } = useAuth();
+
+  const mounted = useMounted();
 
   return (
     <div>
@@ -24,7 +27,7 @@ export const SignUp = () => {
             register(email, password)
               .then((response) => console.log(response))
               .catch((error) => console.log(error.message))
-              .finally(() => setIsSubmitting(false));
+              .finally(() => mounted.current && setIsSubmitting(false));
           }}
         >
           <div className="signup-content">

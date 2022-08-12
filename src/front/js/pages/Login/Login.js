@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { signInWithGoogle } from "../../store/Firebase";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import GoogleButton from "react-google-button";
 import { useAuth } from "../../store/appContext";
+import { useMounted } from "../../store/useMounted";
 import "../Login/login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -12,7 +12,9 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { login } = useAuth();
+  const { login, signInWithGoogle } = useAuth();
+
+  const mounted = useMounted();
 
   return (
     <div>
@@ -25,10 +27,10 @@ export const Login = () => {
             login(email, password)
               .then((response) => {
                 console.log(response);
-                navigate("/home");
+                navigate("/");
               })
               .catch((error) => console.log(error.message))
-              .finally(() => setIsSubmitting(false));
+              .finally(() => mounted.current && setIsSubmitting(false));
           }}
         >
           <div className="Auth-form-content">
@@ -73,7 +75,13 @@ export const Login = () => {
             <hr />
             <div className="container">
               <div className="vertical-center">
-                <GoogleButton onClick={signInWithGoogle} />
+                <GoogleButton
+                  onClick={() =>
+                    signInWithGoogle()
+                      .then((user) => console.log(user))
+                      .catch((error) => console.log(error))
+                  }
+                />
               </div>
             </div>
           </div>
