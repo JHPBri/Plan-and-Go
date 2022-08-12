@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "../../styles/home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Controlbar } from "../component/controlbar";
-import { API_BASED_URL } from "../../../api/yelpAPI/config";
 import { FeaturedCategories } from "../component/FeaturedCategories";
 import { useBusinessSearch } from "../../../api/yelpAPI/useBusinessSearch";
+import { Search } from "../pages/Search/Search";
+import { SearchResultSummary } from '../pages/Search/SearchResultSummary';
+
 export const Home = () => {
   const [state, setState] = useState({
     results: [],

@@ -4,7 +4,7 @@ import { ReactdatePicker } from "./DatePicker.js";
 import Dropdown from "react-bootstrap/Dropdown";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
-import { Search } from "../pages/Search/Search";
+
 export const Controlbar = (props) => {
   const { onSearch } = props;
 
@@ -96,7 +96,6 @@ export const Controlbar = (props) => {
           <i className="fa-solid fa-location-dot"></i>
         </div>
       </Form>
-      <Search />
     </div>
   );
 };

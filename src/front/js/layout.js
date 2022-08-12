@@ -12,7 +12,13 @@ import { Profile } from "./pages/Profiles/Profile";
 import { EditProfile } from "./pages/Profiles/editProfile";
 import { Navbar } from "./component/Navbar/navbar";
 import { Footer } from "./component/footer";
-import { Search } from "./pages/Search/Search";
+
+import {Art} from "./pages/Search/Art/Art";
+import {Sports} from "./pages/Search/Sports/Sports";
+import {Music} from "./pages/Search/Music/Music";
+import {Food} from "./pages/Search/Food/Food";
+import { Shopping } from "./pages/Search/Shopping/Shopping";
+
 //create your first component
 export const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -27,7 +33,11 @@ export const Layout = () => {
             <Navbar />
             <Routes>
               <Route element={<Home />} path="/" />
-              <Route element={<Search />} path="/search" />
+              <Route element={<Art />} path="/Art" />
+              <Route element={<Sports />} path="/Sports" />
+              <Route element={<Music />} path="/Music" />
+              <Route element={<Food />} path="/Food+drinks" />
+              <Route element={<Shopping />} path="/Shopping" />
               <Route element={<Demo />} path="/demo" />
               <Route element={<Single />} path="/single/:theid" />
               <Route element={<Login />} path="/login" />

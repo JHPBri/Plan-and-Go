@@ -25,3 +25,9 @@ body {
     object-fit: scale-down;
     opacity: 1;
   }
+
+  .search-results{
+    display: flex;
+    margin-top: 5rem;
+  }
+

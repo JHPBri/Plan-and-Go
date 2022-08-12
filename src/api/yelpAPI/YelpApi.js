@@ -1,23 +1,25 @@
-import { API_BASED_URL } from "./config";
+import { API_BASED_URL, BEARER_TOKEN } from "./config";
 import queryString from "querystring";
 
-export default function get(path, queryParams) {
+export default async function get(path, queryParams) {
   const query = queryString.stringify(queryParams);
   debugger;
-  fetch(`${API_BASED_URL}${path}?${query}`, {
-    method: "GET",
-    mode: "no-cors",
+  let resp = await fetch(`${API_BASED_URL}${path}?${query}`, {
     headers: {
-      "Access-Control-Allow-Origin":
-        "https://3000-jhpbri-planandgo-6hjyoy4hpcx.ws-us60.gitpod.io",
+      Authorization: `Bearer ${BEARER_TOKEN}`,
+      Origin: "http://3000-jhpbri-planandgo-xkuug45abse.ws-us60.gitpod.io",
+      withCredentials: true,
+      "Access-Control-Allow-Origin": "*",
     },
-  })
-    .then((response) => {
-      console.log("yay");
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log("sad");
-      console.log(error.message);
-    });
+  });
+  debugger;
+  console.log(resp);
+  // .then((response) => {
+  //   console.log("yay");
+  //   console.log(response);
+  // })
+  // .catch((error) => {
+  //   console.log("sad");
+  //   console.log(error.message);
+  // });
 }
