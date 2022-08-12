@@ -63,11 +63,15 @@ export const Controlbar = (props) => {
         </Dropdown.Menu>
       </Dropdown>
 
-      <div className="searchBox">
-        
-        <input type="search" placeholder="Search" onChange={(e) =>setTerm(e.target.value)}/>
-        <i className="fa fa-search" onClick={submit}></i>
-      </div>
-  </Form>
+      <InputGroup className="col-6">
+        <FormControl
+          placeholder="Search"
+          aria-label="Search"
+          aria-describedby="basic-addon2"
+        />
+        <Button id="button-addon2">Search</Button>
+      </InputGroup>
+    </div>
+
   );
 };

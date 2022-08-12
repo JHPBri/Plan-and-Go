@@ -1,42 +1,40 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { Login } from "./Login";
 import { useNavigate } from "react-router-dom";
-import GoogleButton from "react-google-button";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../Login/signup.css";
 import { useAuth } from "../../store/appContext";
 import { useMounted } from "../../store/useMounted";
-import "../Login/login.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
-export const Login = () => {
+export const SignUp = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { login, signInWithGoogle } = useAuth();
+  const { register } = useAuth();
 
   const mounted = useMounted();
 
   return (
     <div>
-      <div className="Auth-form-container">
+      <div className="signup-form-container">
         <form
-          className="Auth-form"
+          className="signup-form"
           onSubmit={async (e) => {
             e.preventDefault();
             console.log(email, password);
-            login(email, password)
-              .then((response) => {
-                console.log(response);
-                navigate("/");
-              })
+            register(email, password)
+              .then((response) => console.log(response))
               .catch((error) => console.log(error.message))
               .finally(() => mounted.current && setIsSubmitting(false));
           }}
         >
-          <div className="Auth-form-content">
-            <h3 className="Auth-form-title">Sign In</h3>
-            <div className="form-group mt-3">
-              <label>Email address</label>
+          <div className="signup-content">
+            <h3 className="signup-form-title">Register</h3>
+            <div className=" form-group mt-3"></div>
+            <div className=" form-group mt-3">
+              <label>Email</label>
               <input
                 type="email"
                 name="email"
@@ -50,7 +48,7 @@ export const Login = () => {
                 }}
               />
             </div>
-            <div className="form-group mt-3">
+            <div className=" form-group mt-3">
               <label>Password</label>
               <input
                 type="password"
@@ -64,26 +62,19 @@ export const Login = () => {
                 }}
               />
             </div>
-            <div>
-              <button type="submit" className="btn btn-primary">
-                Submit
-              </button>
-            </div>
-            <p className="forgot-password text-right mt-2">
-              <a href="#">Forgot your password?</a>
+            <button
+              type="submit"
+              className="btn btn-primary"
+              // onClick={register}
+            >
+              Register
+            </button>
+            <p className="forgot-password text-right">
+              Already registered{" "}
+              <a href="login" onClick={Login}>
+                log in?
+              </a>
             </p>
-            <hr />
-            <div className="container">
-              <div className="vertical-center">
-                <GoogleButton
-                  onClick={() =>
-                    signInWithGoogle()
-                      .then((user) => console.log(user))
-                      .catch((error) => console.log(error))
-                  }
-                />
-              </div>
-            </div>
           </div>
         </form>
       </div>

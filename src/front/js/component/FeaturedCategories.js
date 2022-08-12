@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "../../styles/FeaturedCategories.css";
 
 export const FeaturedCategories = () =>{
@@ -45,8 +45,9 @@ export const FeaturedCategories = () =>{
                 </button>
                 
             </div>
+
         </div>
-
-
-    )
+      </Col>
+    </div>
+  );
 };
