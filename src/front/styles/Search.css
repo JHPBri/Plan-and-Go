@@ -1,0 +1,14 @@
+.container-fluid{
+    justify-content: center;
+    align-items: center;
+
+}
+.navbar{
+    display: flex;
+}
+
+.controlbar{
+    display: flex;
+    
+    margin-top: 20rem;
+}

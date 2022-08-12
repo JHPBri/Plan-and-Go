@@ -1,38 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Controlbar } from "../component/controlbar";
-
-import {FeaturedCategories } from "../component/FeaturedCategories";
-import { Discover } from "../component/discover";
-
+import { API_BASED_URL } from "../../../api/yelpAPI/config";
+import { FeaturedCategories } from "../component/FeaturedCategories";
+import { useBusinessSearch } from "../../../api/yelpAPI/useBusinessSearch";
 export const Home = () => {
-	const { store, actions } = useContext(Context);
+  const [state, setState] = useState({
+    results: [],
+  });
 
-	
+  const onSearch = (a, b) => {
+    const p = a;
+    // const results = await API_BASED_URL.get("/", {
+    //   params: { term: a, location: b },
+    // });
 
-	return (
-		<div>
-			<div className="photoBG container-fluid">
-			<h1 className="header">Start the memories here.</h1>
-      		<h2 className="header2">Find local events happening near you</h2>
-		
-			</div>
-			<Controlbar />
-			<FeaturedCategories/>
-			<Discover />
-		</div>
-		
-	)
+    const results = useBusinessSearch(a, b);
+  };
 
-export const Home = () => {
   return (
     <div>
       <div className="photoBG container-fluid">
         <h1 className="header">Start the memories here.</h1>
         <h2 className="header2">Find local events happening near you</h2>
       </div>
-      <Controlbar />
+      <Controlbar onSearch={onSearch} />
       <FeaturedCategories />
     </div>
   );

@@ -2,11 +2,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 .header1{
     height: 185px;
     opacity: 1;
+    margin-top: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
