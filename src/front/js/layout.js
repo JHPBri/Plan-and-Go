@@ -8,10 +8,11 @@ import { Single } from "./pages/single";
 import { AuthContextProvider } from "./store/appContext";
 import { Login } from "./pages/Login/Login";
 import { SignUp } from "./pages/Login/SignUp";
-import { Profile } from "./pages/Profile";
+import { Profile } from "./pages/Profiles/Profile";
+import { EditProfile } from "./pages/Profiles/editProfile";
 import { Navbar } from "./component/Navbar/navbar";
 import { Footer } from "./component/footer";
-import {Search} from "./pages/Search/Search";
+import { Search } from "./pages/Search/Search";
 //create your first component
 export const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -20,7 +21,6 @@ export const Layout = () => {
 
   return (
     <div>
-
       <AuthContextProvider>
         <BrowserRouter basename={basename}>
           <ScrollToTop>
@@ -33,13 +33,12 @@ export const Layout = () => {
               <Route element={<Login />} path="/login" />
               <Route element={<SignUp />} path="/signup" />
               <Route element={<Profile />} path="/profile" />
+              <Route element={<EditProfile />} path="/edit-profile" />
               <Route element={<h1>Not found!</h1>} />
             </Routes>
-            
           </ScrollToTop>
         </BrowserRouter>
       </AuthContextProvider>
-
     </div>
   );
 };

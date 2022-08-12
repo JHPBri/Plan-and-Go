@@ -3,10 +3,8 @@ import "../../../styles/Navbar.css";
 import { Login } from "../../pages/Login/Login";
 import { SignUp } from "../../pages/Login/SignUp";
 import Logo from "../../../img/Plan-N-Go.png";
-import { Profile } from "../../pages/Profile";
+import { Profile } from "../../pages/Profiles/Profile";
 import { useAuth } from "../../store/appContext";
-
-
 
 export const Navbar = () => {
   const { currentUser, logout } = useAuth();
@@ -31,7 +29,6 @@ export const Navbar = () => {
   }, []);
 
   return (
-    // const {currentUser} = useAuth()
     <div>
       <nav className="navbar">
         <div className="navbar-container container">
@@ -71,11 +68,9 @@ export const Navbar = () => {
               )}
             </li>
           </ul>
-          <a href="https://3000-jhpbri-planandgo-j6w14b7nhw4.ws-us54.gitpod.io/">
+          <a href="/">
             <img src={Logo} alt="logo" className="logo" />
           </a>
-
-
         </div>
       </nav>
     </div>
