@@ -36,7 +36,6 @@ export const Layout = () => {
               <Route element={<Music />} path="/Music" />
               <Route element={<Food />} path="/Food+drinks" />
               <Route element={<Shopping />} path="/Shopping" />
-
               <Route element={<Demo />} path="/demo" />
               <Route element={<Single />} path="/single/:theid" />
               <Route element={<Login />} path="/login" />
