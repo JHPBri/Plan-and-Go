@@ -1,6 +1,9 @@
-.container-fluid{
+.body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+.search-summary {
+    margin-top: -20px;
 }

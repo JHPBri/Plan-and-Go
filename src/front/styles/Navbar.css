@@ -26,9 +26,10 @@
 }
 
 .navbar {
-  position: fixed;
   width: 100%;
+  height: 70px;
   z-index: 100;
+  background-color: #444;
 }
 
 .navbar-container {
@@ -41,9 +42,12 @@
 .menu-items {
   order: 2;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .logo {
-  width: 100px;
+  width: 60px;
+  margin-top: -2px;
 }
 
 #sign-up {
@@ -87,14 +91,13 @@
     background: #fff;
     height: 100vh;
     max-width: 300px;
-    transform: translate(-150%);
+    
     display: flex;
     flex-direction: column;
     margin-left: -40px;
     padding-left: 40px;
-    transition: transform 0.5s ease-in-out;
-    box-shadow: 5px 0px 10px 0px #aaa;
-    overflow: scroll;
+
+
   }
 
   .navbar .menu-items li {
@@ -109,26 +112,6 @@
     right: 15px;
     font-size: 1.1rem;
   }
-
-  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
-    transform: translateX(0);
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-    transform: rotate(45deg);
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-    transform: scaleY(0);
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-    transform: rotate(-45deg);
-  }
 }
 
-@media (max-width: 500px) {
-  .navbar-container input[type="checkbox"]:checked ~ .logo {
-    display: none;
-  }
-}
+
