@@ -71,13 +71,13 @@ export const Profile = () => {
                             title="Bucket"
                           >
                             <Dropdown.Item href="#/action-1">
-                              Action
+                              Six Flags
                             </Dropdown.Item>
                             <Dropdown.Item href="#/action-2">
-                              Another action
+                              Hells Kitchen
                             </Dropdown.Item>
                             <Dropdown.Item href="#/action-3">
-                              Something else
+                              Miami Beach
                             </Dropdown.Item>
                           </DropdownButton>
                           <DropdownButton
@@ -85,13 +85,13 @@ export const Profile = () => {
                             title="Friends"
                           >
                             <Dropdown.Item href="#/action-1">
-                              Action
+                              Chris Luperon
                             </Dropdown.Item>
                             <Dropdown.Item href="#/action-2">
-                              Another action
+                              4Geeks
                             </Dropdown.Item>
                             <Dropdown.Item href="#/action-3">
-                              Something else
+                              Janice Shin
                             </Dropdown.Item>
                           </DropdownButton>
                           <DropdownButton
@@ -99,13 +99,13 @@ export const Profile = () => {
                             title="Visited"
                           >
                             <Dropdown.Item href="#/action-1">
-                              Action
+                              Disney Land
                             </Dropdown.Item>
                             <Dropdown.Item href="#/action-2">
-                              Another action
+                              Prince Street Pizza
                             </Dropdown.Item>
                             <Dropdown.Item href="#/action-3">
-                              Something else
+                              75 Rockerfeller Plaza
                             </Dropdown.Item>
                           </DropdownButton>
                         </div>
