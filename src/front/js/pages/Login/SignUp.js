@@ -1,69 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Login } from "./Login";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../store/Firebase";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Login/signup.css";
+import { useAuth } from "../../store/appContext";
 
 export const SignUp = () => {
-  // const [registerFirstName, setRegisterFirstName] = useState("");
-  // const [registerLastName, setRegisterLastName] = useState("");
-  const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [user, setUser] = useState({});
-
-  const register = async () => {
-    try {
-      const user = await createUserWithEmailAndPassword(
-        auth,
-        // registerFirstName,
-        // registerLastName,
-        registerEmail,
-        registerPassword
-      );
-      console.log(user);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  const { register } = useAuth();
 
   return (
     <div>
       <div className="signup-form-container">
-        <form className="signup-form">
+        <form
+          className="signup-form"
+          onSubmit={async (e) => {
+            e.preventDefault();
+            console.log(email, password);
+            register(email, password)
+              .then((response) => console.log(response))
+              .catch((error) => console.log(error.message))
+              .finally(() => setIsSubmitting(false));
+          }}
+        >
           <div className="signup-content">
             <h3 className="signup-form-title">Register</h3>
-            <div className=" form-group mt-3">
-              {/* <label>First name</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="First name"
-                onChange={(e) => {
-                  setRegisterFirstName(e.target.value);
-                }}
-              />
-            </div>
-            <div className=" form-group mt-3">
-              <label>Last name</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Last name"
-                onChange={(e) => {
-                  setRegisterLastName(e.target.value);
-                }}
-              /> */}
-            </div>
+            <div className=" form-group mt-3"></div>
             <div className=" form-group mt-3">
               <label>Email</label>
               <input
                 type="email"
+                name="email"
                 className="form-control"
+                value={email}
+                autoComplete="email"
                 placeholder="Enter email"
+                required
                 onChange={(e) => {
-                  setRegisterEmail(e.target.value);
+                  setEmail(e.target.value);
                 }}
               />
             </div>
@@ -71,17 +49,20 @@ export const SignUp = () => {
               <label>Password</label>
               <input
                 type="password"
+                name="password"
                 className="form-control"
+                value={password}
                 placeholder="Enter password"
+                required
                 onChange={(e) => {
-                  setRegisterPassword(e.target.value);
+                  setPassword(e.target.value);
                 }}
               />
             </div>
             <button
               type="submit"
               className="btn btn-primary"
-              onClick={register}
+              // onClick={register}
             >
               Register
             </button>

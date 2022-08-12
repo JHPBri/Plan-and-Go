@@ -1,13 +1,10 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
+import React from "react";
 import "../../styles/home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Controlbar } from "../component/controlbar";
 import { FeaturedCategories } from "../component/FeaturedCategories";
 
 export const Home = () => {
-  const { store, actions } = useContext(Context);
-
   return (
     <div>
       <div className="photoBG container-fluid">

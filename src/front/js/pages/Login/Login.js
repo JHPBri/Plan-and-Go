@@ -1,69 +1,69 @@
 import React, { useState } from "react";
-import {
-  // onAuthStateChanged,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { auth } from "../../store/Firebase";
-import GoogleButton from "react-google-button";
 import { signInWithGoogle } from "../../store/Firebase";
+import { useNavigate } from "react-router-dom";
+import GoogleButton from "react-google-button";
+import { useAuth } from "../../store/appContext";
 import "../Login/login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const Login = () => {
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [user, setUser] = useState({});
-
-  // onAuthStateChanged(auth, (currentUser) => {
-  //   setUser(currentUser);
-  // });
-
-  const login = async () => {
-    try {
-      const user = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword
-      );
-      console.log(user);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
-  const logout = async () => {};
+  const { login } = useAuth();
 
   return (
     <div>
       <div className="Auth-form-container">
-        <form className="Auth-form">
+        <form
+          className="Auth-form"
+          onSubmit={async (e) => {
+            e.preventDefault();
+            console.log(email, password);
+            login(email, password)
+              .then((response) => {
+                console.log(response);
+                navigate("/home");
+              })
+              .catch((error) => console.log(error.message))
+              .finally(() => setIsSubmitting(false));
+          }}
+        >
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign In</h3>
             <div className="form-group mt-3">
               <label>Email address</label>
               <input
-                type="text"
-                autoFocus
+                type="email"
+                name="email"
+                className="form-control"
+                value={email}
+                autoComplete="email"
+                placeholder="Enter email"
                 required
-                onChange={(e) => setLoginEmail(e.target.value)}
-                className="form-control mt-1"
-                placeholder="Email Address"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
               />
             </div>
             <div className="form-group mt-3">
               <label>Password</label>
               <input
                 type="password"
-                autoFocus
+                name="password"
+                className="form-control"
+                value={password}
+                placeholder="Enter password"
                 required
-                onChange={(e) => setLoginPassword(e.target.value)}
-                className="form-control mt-1"
-                placeholder="Password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
             </div>
             <div>
-              <button onClick={login} type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary">
                 Submit
               </button>
             </div>
