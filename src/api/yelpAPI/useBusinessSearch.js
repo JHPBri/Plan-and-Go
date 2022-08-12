@@ -1,29 +1,27 @@
-import { useEffect } from 'react';
-import {useState} from 'react';
-import * as api from './api';
-
+import get from "./YelpApi";
 
 export function useBusinessSearch(term, location) {
-    const [businesses, setBusiness] = useState([]);
-    const [amountResults, setAmountResults] = useState();
-    const [searchParams, setSearchParams] = useState({term, location});
+    let businesses
+    let total
 
-    useEffect(() => {
+    const searchParams = {term:"burgers", location};
+    const fetchData = async (searchParams) => {
+        debugger;
+        try {
+            const rawData = await get('/businesses/search', searchParams);
+            const resp = await rawData.json();
+            // setBusinesses(resp.businesses);
+            // setAmountResults(resp.total);
+            businessses= resp.businesses;
+            total = resp.total;
+        } catch (e){
+            console.error(e);
+        }
+        
+    };
+    const results = fetchData(searchParams)
 
-        setBusiness([]);
-        const fetchData = async (searchParams) => {
-            try {
-                const rawData = await api.GET('/businesses/search', searchParams);
-                const resp = await rawData.json();
-                setBusinesses(resp.businesses);
-                setAmountResults(resp.total);
-            } catch (e){
-                console.error(e);
-            }
-            
-        };
-        fetchData();
-    }, [searchParams]);
-    return [businesses, amountResults, searchParams, setSearchParams];
+    
+    return;
 
 }
